@@ -1184,4 +1184,42 @@ function initBackgroundMusic() {
     }, 1000);
 }
 
+// ===== AOS INITIALIZATION FOR INDEX.HTML =====
+// Initialize AOS if the library is available (for index.html compatibility)
+if (typeof AOS !== 'undefined') {
+    AOS.init({
+        duration: 1000,
+        easing: 'ease-in-out',
+        once: true,
+        mirror: false
+    });
+}
+
+// ===== PARTICLES.JS INITIALIZATION FOR INDEX.HTML =====
+// Initialize particles.js if available and container exists
+if (typeof particlesJS !== 'undefined' && document.getElementById('particles-js')) {
+    particlesJS('particles-js', {
+        particles: {
+            number: { value: 50 },
+            color: { value: '#ff69b4' },
+            shape: { type: 'circle' },
+            opacity: { value: 0.3 },
+            size: { value: 3 },
+            move: {
+                enable: true,
+                speed: 1,
+                direction: 'none',
+                random: true
+            }
+        },
+        interactivity: {
+            detect_on: 'canvas',
+            events: {
+                onhover: { enable: true, mode: 'repulse' },
+                onclick: { enable: true, mode: 'push' }
+            }
+        }
+    });
+}
+
 console.log('🎉 Birthday website loaded successfully! 💖');
