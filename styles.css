@@ -266,6 +266,8 @@ body::before {
     font-weight: 700;
     text-align: center;
     margin-bottom: 25px;
+    /* Fallback color for browsers that don't support gradient text */
+    color: #ff1493;
     background: linear-gradient(45deg, #ff69b4, #ff1493, #dc143c, #ff69b4);
     background-size: 300% 300%;
     -webkit-background-clip: text;
@@ -278,6 +280,14 @@ body::before {
     overflow-wrap: break-word;
     word-wrap: break-word;
     hyphens: auto;
+}
+
+/* Fallback for browsers that don't support background-clip: text */
+@supports not (-webkit-background-clip: text) {
+    .main-title {
+        color: #ff1493;
+        text-shadow: 2px 2px 4px rgba(255, 20, 147, 0.3);
+    }
 }
 
 @keyframes gradientFlow {
@@ -300,6 +310,8 @@ body::before {
     animation: wordBounce 3s ease-in-out infinite;
     transform-origin: bottom center;
     max-width: 100%;
+    opacity: 1; /* Will be overridden by JavaScript for controlled animation */
+    transform: translateY(0); /* Will be overridden by JavaScript for controlled animation */
 }
 
 .word-1 { animation-delay: 0s; }

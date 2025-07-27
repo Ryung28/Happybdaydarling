@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Happy Birthday Darling ❤️</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Poppins:wght@300;400;500;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Poppins:wght@300;400;500;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
@@ -140,5 +140,64 @@
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="script.js"></script>
+    
+    <!-- Font Loading and Title Animation Fix -->
+    <script>
+        // Ensure fonts are loaded before starting animations
+        document.addEventListener('DOMContentLoaded', function() {
+            // Wait for fonts to load
+            if (document.fonts && document.fonts.ready) {
+                document.fonts.ready.then(function() {
+                    initializeTitleAnimation();
+                    startMusicAfterLoad();
+                });
+            } else {
+                // Fallback for browsers without font loading API
+                setTimeout(function() {
+                    initializeTitleAnimation();
+                    startMusicAfterLoad();
+                }, 1000);
+            }
+        });
+        
+        function initializeTitleAnimation() {
+            const titleWords = document.querySelectorAll('.word');
+            titleWords.forEach((word, index) => {
+                word.style.opacity = '0';
+                word.style.transform = 'translateY(20px)';
+                word.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                
+                setTimeout(() => {
+                    word.style.opacity = '1';
+                    word.style.transform = 'translateY(0)';
+                }, index * 200 + 500); // Staggered animation
+            });
+        }
+        
+        function startMusicAfterLoad() {
+            const backgroundMusic = document.getElementById('birthday-song');
+            const musicToggleBtn = document.getElementById('music-toggle');
+            
+            if (backgroundMusic && musicToggleBtn) {
+                // Auto-play music after page loads
+                setTimeout(() => {
+                    backgroundMusic.play().then(() => {
+                        musicToggleBtn.classList.add('playing');
+                        const icon = musicToggleBtn.querySelector('i');
+                        if (icon) icon.classList.replace('fa-music', 'fa-pause');
+                        const tooltip = musicToggleBtn.querySelector('.music-tooltip');
+                        if (tooltip) tooltip.textContent = 'Pause Music';
+                    }).catch(error => {
+                        console.log('Auto-play prevented:', error);
+                        // Show a message to user to click to play music
+                        const floatingMsg = document.getElementById('floating-message');
+                        if (floatingMsg) {
+                            floatingMsg.innerHTML = '<i class="fas fa-music"></i> Click to play music! <i class="fas fa-music"></i>';
+                        }
+                    });
+                }, 1500); // Start music after title animation
+            }
+        }
+    </script>
 </body>
 </html>

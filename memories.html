@@ -332,25 +332,11 @@
             
             if (birthdaySurpriseBtn) {
                 birthdaySurpriseBtn.addEventListener('click', function() {
-                    // OPTION 1: GitHub Pages URL (recommended for web hosting)
-                    // Repository URL: https://github.com/Ryung28/Happybdaydarling.git
-                    // GitHub Pages URL format: https://[username].github.io/[repository-name]/index.html
-                    // IMPORTANT: Make sure to enable GitHub Pages in your repository settings:
-                    // 1. Go to your repository on GitHub
-                    // 2. Click on 'Settings' tab
-                    // 3. Scroll down to 'GitHub Pages' section
-                    // 4. Under 'Source', select 'main' branch
-                    // 5. Click 'Save'
-                    // Your site will be published at the URL below
-                    let birthdayUrl = 'https://Ryung28.github.io/Happybdaydarling/index.html';
+                    // Local file path to Birthday-master template
+                    let birthdayUrl = 'file:///C:/Users/boyma/Downloads/Birthday-master%20replacement/Birthday-master/index.html';
                     
-                    // OPTION 2: Local file path (for testing on the same device)
-                    // Uncomment and modify the line below if you want to use a local file path instead
-                    // birthdayUrl = 'file:///C:/Users/boyma/Downloads/Birthday-master%20replacement/Birthday-master/index.html';
-                    
-                    // OPTION 3: Relative path (if Birthday-master is in the same repository)
-                    // Uncomment the line below if the Birthday-master folder is in the same repository
-                    // birthdayUrl = '../Birthday-master/index.html';
+                    // Alternative: Try relative path first, fallback to absolute path
+                    // birthdayUrl = '../Birthday-master replacement/Birthday-master/index.html';
                     
                     // Open in a new tab
                     window.open(birthdayUrl, '_blank');
