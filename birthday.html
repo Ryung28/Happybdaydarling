@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="ie lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>    <html class="ie lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>    <html class="ie lt-ie9"> <![endif]-->
+<!--[if gt IE 8]> <html> <![endif]-->
+<!--[if !IE]><!--><html lang="en"><!-- <![endif]-->
+<head>
+	<title>Happy Birthday Darling</title>
+	<meta charset="UTF-8" />
+	<meta name="description" content="Happy Birthday Darling">
+	<meta name="robots" content="index, follow" />
+    <meta name="keywords" content="Birthday, Happy, Love">
+    <!-- Strat of Facebook Meta -->
+    <meta property="og:type" content="E-Greeting" />
+    <meta property="og:image" content="favicon.ico" />
+    <meta property="og:description" content="Wish you a very Happy Birthday Darling">
+    <!-- End of Facebook Meta Tags -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="stylesheet.css">
+	<link rel="stylesheet" type="text/css" href="loading.css">
+	<link href='http://fonts.googleapis.com/css?family=Signika' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+	<!-- <link href='http://fonts.googleapis.com/css?family=Nunito' rel='stylesheet' type='text/css'> -->
+	<link rel="stylesheet/less" href="cake.less">
+	<script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.1.0/less.min.js"></script>
+	<style>
+	/* Cake styles from cake.less */
+	.cake {
+	  position: absolute;
+	  width: 250px;
+	  height: 200px;
+	  top: 50%;
+	  left: 50%;
+	  margin-top: -70px;
+	  margin-left: -125px;
+	}
+	.cake > * {
+	  position: absolute;
+	  /* backface-visibility: hidden; */
+	}
+	.layer {
+	  position: absolute;
+	  display: block;
+	  width: 250px;
+	  height: 100px;
+	  border-radius: 50%;
+	  background-color: #553c13;
+	  box-shadow: 0 2px 0px #6a4b18, 0 4px 0px #33240b, 0 6px 0px #32230b, 0 8px 0px #31230b, 0 10px 0px #30220b, 0 12px 0px #2f220b, 0 14px 0px #2f210a, 0 16px 0px #2e200a, 0 18px 0px #2d200a, 0 20px 0px #2c1f0a, 0 22px 0px #2b1f0a, 0 24px 0px #2a1e09, 0 26px 0px #2a1d09, 0 28px 0px #291d09, 0 30px 0px #281c09;
+	}
+	.layer-top {
+	  top: 0px;
+	}
+	.layer-middle {
+	  top: 33px;
+	}
+	.layer-bottom {
+	  top: 66px;
+	}
+	.icing {
+	  top: 2px;
+	  left: 5px;
+	  background-color: #f0e4d0;
+	  width: 240px;
+	  height: 90px;
+	  border-radius: 50%;
+	}
+	.icing:before {
+	  content: "";
+	  position: absolute;
+	  top: 4px;
+	  right: 5px;
+	  bottom: 6px;
+	  left: 5px;
+	  background-color: #f4ebdc;
+	  box-shadow: 0 0 4px #f6efe3, 0 0 4px #f6efe3, 0 0 4px #f6efe3;
+	  border-radius: 50%;
+	  z-index: 1;
+	}
+	.drip {
+	  display: block;
+	  width: 50px;
+	  height: 60px;
+	  border-bottom-left-radius: 25px;
+	  border-bottom-right-radius: 25px;
+	  background-color: #f0e4d0;
+	}
+	.drip1 {
+	  top: 53px;
+	  left: 5px;
+	  transform: skewY(15deg);
+	  height: 48px;
+	  width: 40px;
+	}
+	.drip2 {
+	  top: 69px;
+	  left: 181px;
+	  transform: skewY(-15deg);
+	}
+	.drip3 {
+	  top: 54px;
+	  left: 90px;
+	  width: 80px;
+	  height: 63px;
+	  border-bottom-left-radius: 40px;
+	  border-bottom-right-radius: 40px;
+	}
+	.candle {
+	  background-color: #7B020B;
+	  width: 16px;
+	  height: 50px;
+	  border-radius: 8px / 4px;
+	  top: -20px;
+	  left: 50%;
+	  margin-left: -8px;
+	  z-index: 10;
+	}
+	.candle:before {
+	  content: "";
+	  position: absolute;
+	  top: 0;
+	  left: 0;
+	  width: 16px;
+	  height: 8px;
+	  border-radius: 50%;
+	  background-color: #ad030f;
+	}
+	.flame {
+	  position: absolute;
+	  background-color: #FD5061;
+	  width: 15px;
+	  height: 35px;
+	  border-radius: 10px 10px 10px 10px / 25px 25px 10px 10px;
+	  top: -34px;
+	  left: 50%;
+	  margin-left: -7.5px;
+	  z-index: 10;
+	  box-shadow: 0 0 10px #FD5061, 0 0 20px #FD5061, 0 0 60px #FD5061, 0 0 80px #FD5061;
+	  transform-origin: 50% 90%;
+	  animation: flicker 1s ease-in-out alternate infinite;
+	}
+	@keyframes flicker {
+	  0% {
+	    transform: skewX(5deg);
+	    box-shadow: 0 0 10px #FD5061, 0 0 20px #FD5061, 0 0 60px #FD5061, 0 0 80px #FD5061;
+	  }
+	  25% {
+	    transform: skewX(-5deg);
+	    box-shadow: 0 0 10px #FD5061, 0 0 20px #FD5061, 0 0 40px #FD5061, 0 0 60px #FD5061;
+	  }
+	  50% {
+	    transform: skewX(10deg);
+	    box-shadow: 0 0 10px #FD5061, 0 0 20px #FD5061, 0 0 40px #FD5061, 0 0 80px #FD5061;
+	  }
+	  75% {
+	    transform: skewX(-10deg);
+	    box-shadow: 0 0 10px #FD5061, 0 0 20px #FD5061, 0 0 40px #FD5061, 0 0 60px #FD5061;
+	  }
+	  100% {
+	    transform: skewX(5deg);
+	    box-shadow: 0 0 10px #FD5061, 0 0 20px #FD5061, 0 0 60px #FD5061, 0 0 80px #FD5061;
+	  }
+	}
+	
+	/* Additional styles from Birthday-master */
+	.loading {
+		background: url('cake128.png') no-repeat center center;
+		width: 100%;
+		height: 100%;
+		position: fixed;
+	}
+	.balloons {
+		position: fixed;
+		bottom: -10px;
+		opacity: 0.6;
+		z-index: 99;
+		width: 100px;
+		height: 183px;
+		background-repeat: no-repeat no-repeat;
+		background-size: 100px 183px;
+	}
+	.balloons h2 {
+		text-transform: uppercase;
+		font-family: 'Signika', sans-serif;
+		font-size: 50px;
+		color: #BF4136;
+		text-shadow: 5px 5px 5px #FFF;
+		display: none;
+	}
+	#b1,#b11 {
+		background-image: url('b1.png');
+	}
+	#b2,#b22 {
+		background-image: url('b2.png');
+	}
+	#b3,#b33 {
+		background-image: url('b3.png');
+	}
+	#b4,#b44 {
+		background-image: url('b4.png');
+	}
+	#b5,#b55 {
+		background-image: url('b5.png');
+	}
+	#b6,#b66 {
+		background-image: url('b6.png');
+	}
+	#b7,#b77 {
+		background-image: url('b7.png');
+	}
+	.balloons-rotate-behaviour-one {
+		-webkit-animation: balloons_rotate_one linear 10s infinite;
+		-webkit-transform: rotate(30deg);
+		-moz-animation: balloons_rotate_one linear 10s infinite;
+		-moz-transform: rotate(30deg);
+		-o-animation: balloons_rotate_one linear 10s infinite;
+		-o-transform: rotate(30deg);
+		-ms-animation: balloons_rotate_one linear 10s infinite;
+		-ms-transform: rotate(30deg);
+		animation: balloons_rotate_one linear 10s infinite;
+		transform: rotate(30deg);
+	}
+	@-webkit-keyframes balloons_rotate_one {
+		0% {
+			-webkit-transform: rotate(30deg);
+		}
+		50% {
+			-webkit-transform: rotate(-30deg);
+		}
+		100% {
+			-webkit-transform: rotate(30deg);
+		}
+	}
+	@-moz-keyframes balloons_rotate_one {
+		0% {
+			-moz-transform: rotate(30deg);
+		}
+		50% {
+			-moz-transform: rotate(-30deg);
+		}
+		100% {
+			-moz-transform: rotate(30deg);
+		}
+	}
+	@-o-keyframes balloons_rotate_one {
+		0% {
+			-o-transform: rotate(30deg);
+		}
+		50% {
+			-o-transform: rotate(-30deg);
+		}
+		100% {
+			-o-transform: rotate(30deg);
+		}
+	}
+	@-ms-keyframes balloons_rotate_one {
+		0% {
+			-ms-transform: rotate(30deg);
+		}
+		50% {
+			-ms-transform: rotate(-30deg);
+		}
+		100% {
+			-ms-transform: rotate(30deg);
+		}
+	}
+	@keyframes balloons_rotate_one {
+		0% {
+			transform: rotate(30deg);
+		}
+		50% {
+			transform: rotate(-30deg);
+		}
+		100% {
+			transform: rotate(30deg);
+		}
+	}
+	.balloons-rotate-behaviour-two {
+		-webkit-animation: balloons_rotate_two linear 10s infinite;
+		-webkit-transform: rotate(-20deg);
+		-moz-animation: balloons_rotate_two linear 10s infinite;
+		-moz-transform: rotate(-20deg);
+		-o-animation: balloons_rotate_two linear 10s infinite;
+		-o-transform: rotate(-20deg);
+		-ms-animation: balloons_rotate_two linear 10s infinite;
+		-ms-transform: rotate(-20deg);
+		animation: balloons_rotate_two linear 10s infinite;
+		transform: rotate(-20deg);
+	}
+	@-webkit-keyframes balloons_rotate_two {
+		0% {
+			-webkit-transform: rotate(-20deg);
+		}
+		50% {
+			-webkit-transform: rotate(20deg);
+		}
+		100% {
+			-webkit-transform: rotate(-20deg);
+		}
+	}
+	@-moz-keyframes balloons_rotate_two {
+		0% {
+			-moz-transform: rotate(-20deg);
+		}
+		50% {
+			-moz-transform: rotate(20deg);
+		}
+		100% {
+			-moz-transform: rotate(-20deg);
+		}
+	}
+	@-o-keyframes balloons_rotate_two {
+		0% {
+			-o-transform: rotate(-20deg);
+		}
+		50% {
+			-o-transform: rotate(20deg);
+		}
+		100% {
+			-o-transform: rotate(-20deg);
+		}
+	}
+	@-ms-keyframes balloons_rotate_two {
+		0% {
+			-ms-transform: rotate(-20deg);
+		}
+		50% {
+			-ms-transform: rotate(20deg);
+		}
+		100% {
+			-ms-transform: rotate(-20deg);
+		}
+	}
+	@keyframes balloons_rotate_two {
+		0% {
+			transform: rotate(-20deg);
+		}
+		50% {
+			transform: rotate(20deg);
+		}
+		100% {
+			transform: rotate(-20deg);
+		}
+	}
+	.balloon-border{
+		position: fixed;
+		top: 100%;
+		opacity: 0.5;
+		z-index: 9999;
+	}
+	.message{
+		width: 50%;
+		margin: 0 auto;
+		margin-top: 5em;
+		display: none;
+	}
+	.message p{
+		font-family: 'Signika', sans-serif;
+		font-size: 30px;
+		text-transform: uppercase;
+		color: #C4515C;
+		text-shadow: 2px 2px 2px #FFF;
+		display: none;
+		font-weight: bold;
+	}
+	.btn-primary {
+		border-color: #466baf;
+		padding: 10px;
+		text-transform: uppercase;
+		font-family: 'Signika', sans-serif;
+		font-weight: bold;
+		color: #fff;
+		background-color: #466baf;
+	}
+	.btn-primary:hover,
+	.btn-primary:focus,
+	.btn-primary.focus,
+	.btn-primary:active,
+	.btn-primary.active,
+	.open > .dropdown-toggle.btn-primary {
+		color: #fff;
+		background-color: #3276b1;
+		border-color: #3276b1;
+	}
+	
+	/* Heart trail effect styles */
+	.heart-trail {
+		position: fixed;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		pointer-events: none;
+		z-index: 100;
+	}
+	
+	.floating-heart {
+		position: absolute;
+		font-size: 20px;
+		color: #ff6b6b;
+		pointer-events: none;
+		animation: float-up 4s ease-in-out infinite;
+		opacity: 0;
+	}
+	
+	@keyframes float-up {
+		0% {
+			transform: translateY(0) rotate(0deg);
+			opacity: 0;
+		}
+		10% {
+			opacity: 1;
+		}
+		90% {
+			opacity: 1;
+		}
+		100% {
+			transform: translateY(-100vh) rotate(360deg);
+			opacity: 0;
+		}
+	}
+	
+	/* Music control button */
+	.music-control {
+		position: fixed;
+		top: 20px;
+		right: 20px;
+		z-index: 1000;
+		background: rgba(255, 255, 255, 0.8);
+		border-radius: 50%;
+		width: 50px;
+		height: 50px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		cursor: pointer;
+		box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+		transition: all 0.3s ease;
+	}
+	
+	.music-control i {
+		color: #ff6b6b;
+		font-size: 20px;
+	}
+	
+	.music-control:hover {
+		transform: scale(1.1);
+	}
+	
+	/* Navigation buttons */
+	.navigation-buttons {
+		position: fixed;
+		bottom: 80px;
+		left: 50%;
+		transform: translateX(-50%);
+		display: flex;
+		gap: 20px;
+		z-index: 1000;
+	}
+	
+	.nav-button {
+		padding: 10px 20px;
+		background: rgba(255, 255, 255, 0.8);
+		border-radius: 30px;
+		color: #ff6b6b;
+		text-decoration: none;
+		font-weight: bold;
+		box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+		transition: all 0.3s ease;
+	}
+	
+	.nav-button:hover {
+		background: #ff6b6b;
+		color: white;
+		transform: translateY(-3px);
+	}
+	</style>
+</head>
+
+<body>
+	<div class="loading"></div>
+	<!-- Heart Trail Effect -->
+    <div class="heart-trail"></div>
+    
+    <!-- Music Control -->
+    <div class="music-control" onclick="toggleMusic()">
+        <i class="fas fa-music" id="music-icon"></i>
+    </div>
+    
+    <div class="container">
+    
+    <!-- Audio Elements -->
+	<audio class="song" controls loop>
+        <source src="hbd.mp3"></source>
+	   Your browser isn't invited for super fun audio time.
+    </audio>
+    <div class="balloons text-center" id="b1">
+    	<h2 style="color:#F2B300;">H</h2>
+    </div>
+    <div class="balloons text-center" id="b2">
+    	<h2 style="color:#0719D4;">B</h2>
+    </div>
+	<div class="balloons text-center" id="b3">
+    	<h2 style="color:#D14D39;">D</h2>
+    </div>
+	<div class="balloons text-center" id="b4">
+    	<h2 style="color:#8FAD00;">X</h2>
+    </div>
+	<div class="balloons text-center" id="b5">
+    	<h2 style="color:#8377E4;">O</h2>
+    </div>
+    <div class="balloons text-center" id="b6">
+    	<h2 style="color:#99C96A;">L</h2>
+    </div>
+    <div class="balloons text-center" id="b7">
+    	<h2 style="color:#20CFB4;">A</h2>
+    </div>
+
+    <img src="Balloon-Border.png" width="100%" class="balloon-border">
+ 
+
+	<div class="container">
+		
+		<div class="row">
+			<div class="col-md-2 col-xs-2 bulb-holder">
+				<div class="bulb" id="bulb_yellow"></div>
+			</div>
+			<div class="col-md-2 col-xs-2 bulb-holder">
+				<div class="bulb" id="bulb_red"></div>
+			</div>
+			<div class="col-md-2 col-xs-2 bulb-holder">
+				<div class="bulb" id="bulb_blue"></div>
+			</div>
+			<div class="col-md-2 col-xs-2 bulb-holder">
+				<div class="bulb" id="bulb_green"></div>
+			</div>
+			<div class="col-md-2 col-xs-2 bulb-holder">
+				<div class="bulb" id="bulb_pink"></div>
+			</div>
+			<div class="col-md-2 col-xs-2 bulb-holder">
+				<div class="bulb" id="bulb_orange"></div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12 text-center">
+				<img src="banner.png" class="bannar">
+			</div>
+		</div>
+		<div class="row cake-cover">
+			<div class="col-md-12 texr-center">
+				<div class="cake">
+				  <div class="velas">
+				    <div class="fuego"></div>
+				    <div class="fuego"></div>
+				    <div class="fuego"></div>
+				    <div class="fuego"></div>
+				    <div class="fuego"></div>
+				  </div>
+				  <div class="cobertura"></div>
+				  <div class="bizcocho"></div>
+				</div>
+			</div>
+		</div>
+		<div class="row message">
+			<div class="message">
+			<p>Hi darling, so surprise hahahahhahahahahahaah</p>
+			<p>Happy, Happy Birthday to the most incredible person in my life, Devine Grace Sumaplong.</p>
+			<p>Wow, full name! I just had to say it all because a name that beautiful deserves to be said in full.</p>
+			<p>Every single day I get to spend with you, even just through chats and calls, feels like a gift.</p>
+			<p>But today is different. Today is all about you, and I wanted to do everything I could to make you feel as cherished, as loved, and as celebrated as you truly are.</p>
+			<p>Happy birthday, darling 🎂🎊❤️</p>
+			<p>E enjoy imo adlaw didto mouli ka, dli rako mingawon basin 🥲 btaw I'll wait. Easy ra kaayu nako na hahahahaaha🥲🥲🥲.</p>
+			<p>So, time check, it's currently 9:15 PM here, and I've been sitting in front of my screen, making this little website just for you for the past few hours.</p>
+			<p>You might ask why, and the simplest answer is wala lng, I just really, really wanted to surprise you on your special day.</p>
+			<p>Mu tawag unta ko nimo kay lagi molakaw naka ugma in English, I wanted to use this time to have one last long chika night with you since molakaw naka tomorrow hahahah and maybe 31 paka makauli.</p>
+			<p>A part of me really wanted to spend these few hours just hearing your voice, but I knew I had to finish this.</p>
+			<p>Humanon sa nako ni kay since you're special, you deserve to be treated as someone truly special, baby.</p>
+			<p>I wanted to give you something you could keep, something that would remind you of how I feel, even when we can't talk.</p>
+			<p>So, to start this long birthday greeting, I wanted you to know, darling, that you are genuinely one of the best things that has ever happened to my life.</p>
+			<p>I know some people might call this OA, and some might even call it cringe, but I don't care about any of that because this is exactly what I feel, raw and unfiltered wow deep words hahahah.</p>
+			<p>God knows best how much I love you, and I promise you I will cherish and enjoy every single moment I have with you, darling.</p>
+			<p>You are, without a doubt, the most wonderful woman I have ever met.</p>
+			<p>I'm not exaggerating, and you know I'm not the best with words, darling, kaya I'll just try my best to tell you everything that I feel about you.</p>
+			<p>Even though dli pata uyab, I want you to know that I am now completely committed to you.</p>
+			<p>Ing-ani jd ko ma-inlove hahahaha, swertia nimo uy hahahahah sugta nako pls hahahaha.</p>
+			<p>And darling, kabalo baka your literally one of a kind. In a world where so many people are just following trends, you stand out so effortlessly.</p>
+			<p>You are a high-value woman, and that is so incredibly rare nowadays.</p>
+			<p>It's not just one thing; it's everything about you. You have a mindset that not everyone in this generation possesses.</p>
+			<p>It's a mindset of strength, of knowing your worth, and of looking at the world with such a unique and intelligent perspective.</p>
+			<p>Personality-wise, you are pure joy. Grabi ko ka happy kuyog, ambt ngano, basin sa vibe nimo.</p>
+			<p>Being around you feels like stepping into the sunshine. Your energy is infectious.</p>
+			<p>You're so friendly sa tanan... except nako sa school sauna, dli ko nimo pansinon! Like oh my god, am I really that disgusting? Hahaha char.</p>
+			<p>But seriously, your vibe is so different and so refreshing. You are so much fun to be with, and you have this incredibly positive attitude that feels like an actual anti-depressant wowowow super deep words hahahah.</p>
+			<p>You make the world feel lighter just by being in it.</p>
+			<p>Beyond that, you are so responsible and hardworking. As in, kabalo jd ko hago kaayu mag working student, darling, and yet you handle it with so much grace.</p>
+			<p>I see how much effort you put into everything, how you're balancing so many things at once, and yet here you are, almost graduating na.</p>
+			<p>I am so, so incredibly proud of you, darling. Bisag kadyut rata nagkaila, I'm still so genuinely proud of everything you are and everything you're achieving.</p>
+			<p>And you're so independent, wow. Bantay kung naa kay kuhaon mga gamit or pagkaon ba or unsa sa ref kuhaon nako tanan banko Bantay dika mangayo tabang nako hahahahah.</p>
+			<p>Btaw Your independence is one of the things I admire most about you, but I also want you to know that I want to be the person you can depend on whenever you need it.</p>
+			<p>You're perfect, darling. You truly are.</p>
+			<p>Now, appearance-wise... hot damn, baby. If there was a scale for beauty, you would completely break it.</p>
+			<p>Gwapa kayka send pic lagi darling huhuhuh 🥲 hahahah, promise.</p>
+			<p>I hope you always see yourself the way I see you. Please embrace your beauty, darling.</p>
+			<p>It's a kind of beauty that can literally glue my eyes for hours without me even noticing.</p>
+			<p>But it's more than just that. Being with you gives me a sense of peace that I've been searching for.</p>
+			<p>It's a calm that settles over me just by being in your presence. And your cuteness is completely off the charts.</p>
+			<p>I always want to pinch your cheeks, it's like you're a cat. You really do give off the feeling of a cat—independent and majestic, but also so incredibly cute and comforting.</p>
+			<p>So, enough about that for a second. I really, really want to thank you for everything, darling.</p>
+			<p>Basin makaingon ka ngano mag thank you mn ko. It's because just you existing in my life is already a blessing that I can't even begin to describe.</p>
+			<p>Btaw, I sometimes imagine, what if wala nako ni-chat nimo? What if dli sab ko brave what if no stop ko chat, or what if wala nako mo-reply nimo that one time?</p>
+			<p>Moabot kaha ta ing-ani? It's a scary thought. My life would be so much less colorful without you in it.</p>
+			<p>M.U. na man ata ta, wala label kay wala pa nabutngan hahahah.</p>
+			<p>But really, I want to thank you, darling. Thank you for entertaining me sa mga kabuang nako usahay kay nabuang namn ko nimo sala jd ni nimo hahaha.</p>
+			<p>Thank you for coming with me on our two dates, which are already some of my most cherished memories.</p>
+			<p>Thank you for our audio calls every night, for every vm, for all our chats, for every vc.</p>
+			<p>Thank you for ni sabay sa mga binuang nako, like, tanan ❤️❤️❤️.</p>
+			<p>Ganahan kaayu ko sa atong experience, ayy. Bisag naa nako rs sauna, pero maot sya, toxic. Lahi ra kay diri.</p>
+			<p>It's completely different with you. Dli sa ingun dli toxic, pero I just feel so at ease when I'm with you.</p>
+			<p>In all our kuyog, with all the laughter and conversations, I just wanna be by your side, ayy.</p>
+			<p>I feel like I can be my 100% authentic self with you sa personal maulaw ko gamay, with no filters and no fear of judgment. That feeling is priceless.</p>
+			<p>Bisag gamay ra kaayu ta nagkuyog, I enjoyed every single last bit of it, and I want to have so much more of it, hahahaha.</p>
+			<p>Greedy kaya ko. I'm greedy for more of your time, more of your laughter, more inside jokes, more late-night talks, more memories.</p>
+			<p>Wala ko kabalo jd if makaya nako ni 1500 words kay gamay pa kaayu ta mga memories together raba. But every memory we do have feels so significant and full of meaning.</p>
+			<p>Sugdan na lagi... pwede manguyab? Hahahahah.</p>
+			<p>Btaw, Iloveyouudarling, so muchh 😘.</p>
+			<p>Maybe by the time you read all of this, kaning pag gama nako ani, makatulog naka, kaya Goodnight, darling.</p>
+			<p>Sleep well and sleep tight. Dream of happy things apila ko sa damgo ha, dili na raba ka mingawon nako gahi na kayka hahahah.</p>
+			<p>On your special day, I wish you all the happiness in the entire universe.</p>
+			<p>I wish you overwhelming success in everything you set your mind to. I wish for all of your biggest and smallest dreams to come true.</p>
+			<p>May this next year of your life be filled with even more beautiful moments than the last, exciting new adventures that make you feel alive, and absolutely everything your heart desires.</p>
+			<p>You deserve it all.</p>
+			<p>And dugay ra jd ko ga plano na mugama ug 1500 words nimo, and this is it.</p>
+			<p>Makita nimo 1500 words ni sya kay ibutang nako sa ginama nako web hahahah. Pwede ka manigurado didto sa QuillBot hahahah.</p>
+			<p>So again, darling, thank you so much. For everything. For being you.</p>
+			<p>Naay usahay mo hatag kanako mga positive nga istorya, and since meeting you, I always find myself thinking, "ayy hala tuod no, kinahanglan positive jd ko."</p>
+			<p>You make me want to be a better man bisag mahadlok ko mamali nuon everyone is bound to make mistake pero wala lng i just fear the thought of my hurting you because you inspire me darling to strive better to be better to be the man I wanted to be.</p>
+			<p>Happy Birthday again, my love/my sunshine/my sugarplum/my baby/my darling/my wife/my future/my everythin.</p>
+			<p>I can't wait to see you when's the next date? hahahahah</p>
+			</div>
+		</div>
+		<div class="navbar navbar-fixed-bottom">
+			<div class="row">
+				<div class="col-md-6 text-center col-md-offset-3">
+					<button class="btn btn-primary" id="turn_on">Turn On Lights</button>
+					<button class="btn btn-primary" id="play">Play Music</button>
+					<button class="btn btn-primary" id="bannar_coming">Let's Decorate</button>
+					<button class="btn btn-primary" id="balloons_flying">Fly With Balloons</button>
+					<button class="btn btn-primary" id="cake_fadein">Most Delicious Cake Ever</button>
+					<button class="btn btn-primary" id="light_candle"> Light Candle</button>
+					<button class="btn btn-primary" id="wish_message">Happy Birthday</button>
+					<button class="btn btn-primary" id="story">A message for you</button>
+					<button class="btn btn-primary" id="memories_button" onclick="location.href='memories.html'">See Our Memories</button>
+					<button class="btn btn-primary" id="back_button" onclick="location.href='index.html'">Back to Home</button>
+					<button class="btn btn-primary" id="next_button" onclick="location.href='gallery.html'">Photo Gallery</button>
+				</div>
+			</div>
+		</div>
+
+		<!-- Navigation Buttons -->
+		<div class="navigation-buttons">
+			<a href="memories.html" class="nav-button back-button">
+				<i class="fas fa-arrow-left"></i> Back to Memories
+			</a>
+			<a href="index.html" class="nav-button home-button">
+				<i class="fas fa-home"></i> Home
+			</a>
+		</div>
+	</div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+<script>
+$(window).load(function(){
+	$('.loading').fadeOut('fast');
+	$('.container').fadeIn('fast');
+});
+$('document').ready(function(){
+		var vw;
+		$(window).resize(function(){
+			 vw = $(window).width()/2;
+			$('#b1,#b2,#b3,#b4,#b5,#b6,#b7').stop();
+			$('#b11').animate({top:240, left: vw-350},500);
+			$('#b22').animate({top:240, left: vw-250},500);
+			$('#b33').animate({top:240, left: vw-150},500);
+			$('#b44').animate({top:240, left: vw-50},500);
+			$('#b55').animate({top:240, left: vw+50},500);
+			$('#b66').animate({top:240, left: vw+150},500);
+			$('#b77').animate({top:240, left: vw+250},500);
+		});
+
+	$('#turn_on').click(function(){
+		$('#bulb_yellow').addClass('bulb-glow-yellow');
+		$('#bulb_red').addClass('bulb-glow-red');
+		$('#bulb_blue').addClass('bulb-glow-blue');
+		$('#bulb_green').addClass('bulb-glow-green');
+		$('#bulb_pink').addClass('bulb-glow-pink');
+		$('#bulb_orange').addClass('bulb-glow-orange');
+		$('body').addClass('peach');
+		$(this).fadeOut('slow').delay(5000).promise().done(function(){
+			$('#play').fadeIn('slow');
+		});
+	});
+	$('#play').click(function(){
+		var audio = $('.song')[0];
+        audio.play();
+        $('#bulb_yellow').addClass('bulb-glow-yellow-after');
+		$('#bulb_red').addClass('bulb-glow-red-after');
+		$('#bulb_blue').addClass('bulb-glow-blue-after');
+		$('#bulb_green').addClass('bulb-glow-green-after');
+		$('#bulb_pink').addClass('bulb-glow-pink-after');
+		$('#bulb_orange').addClass('bulb-glow-orange-after');
+		$('body').css('backgroud-color','#FFF');
+		$('body').addClass('peach-after');
+		$(this).fadeOut('slow').delay(6000).promise().done(function(){
+			$('#bannar_coming').fadeIn('slow');
+		});
+	});
+
+	$('#bannar_coming').click(function(){
+		$('.bannar').addClass('bannar-come');
+		$(this).fadeOut('slow').delay(6000).promise().done(function(){
+			$('#balloons_flying').fadeIn('slow');
+		});
+	});
+
+	function loopOne() {
+		var randleft = 1000*Math.random();
+		var randtop = 500*Math.random();
+		$('#b1').animate({left:randleft,bottom:randtop},10000,function(){
+			loopOne();
+		});
+	}
+	function loopTwo() {
+		var randleft = 1000*Math.random();
+		var randtop = 500*Math.random();
+		$('#b2').animate({left:randleft,bottom:randtop},10000,function(){
+			loopTwo();
+		});
+	}
+	function loopThree() {
+		var randleft = 1000*Math.random();
+		var randtop = 500*Math.random();
+		$('#b3').animate({left:randleft,bottom:randtop},10000,function(){
+			loopThree();
+		});
+	}
+	function loopFour() {
+		var randleft = 1000*Math.random();
+		var randtop = 500*Math.random();
+		$('#b4').animate({left:randleft,bottom:randtop},10000,function(){
+			loopFour();
+		});
+	}
+	function loopFive() {
+		var randleft = 1000*Math.random();
+		var randtop = 500*Math.random();
+		$('#b5').animate({left:randleft,bottom:randtop},10000,function(){
+			loopFive();
+		});
+	}
+
+	function loopSix() {
+		var randleft = 1000*Math.random();
+		var randtop = 500*Math.random();
+		$('#b6').animate({left:randleft,bottom:randtop},10000,function(){
+			loopSix();
+		});
+	}
+	function loopSeven() {
+		var randleft = 1000*Math.random();
+		var randtop = 500*Math.random();
+		$('#b7').animate({left:randleft,bottom:randtop},10000,function(){
+			loopSeven();
+		});
+	}
+
+	$('#balloons_flying').click(function(){
+		$('.balloon-border').animate({top:-500},8000);
+		$('#b1,#b4,#b5,#b7').addClass('balloons-rotate-behaviour-one');
+		$('#b2,#b3,#b6').addClass('balloons-rotate-behaviour-two');
+		loopOne();
+		loopTwo();
+		loopThree();
+		loopFour();
+		loopFive();
+		loopSix();
+		loopSeven();
+		
+		$(this).fadeOut('slow').delay(5000).promise().done(function(){
+			$('#cake_fadein').fadeIn('slow');
+		});
+	});	
+
+	$('#cake_fadein').click(function(){
+		$('.cake').fadeIn('slow');
+		$(this).fadeOut('slow').delay(3000).promise().done(function(){
+			$('#light_candle').fadeIn('slow');
+		});
+	});
+
+	$('#light_candle').click(function(){
+		$('.fuego').fadeIn('slow');
+		$(this).fadeOut('slow').promise().done(function(){
+			$('#wish_message').fadeIn('slow');
+		});
+	});
+
+		
+	$('#wish_message').click(function(){
+		 vw = $(window).width()/2;
+
+		$('#b1,#b2,#b3,#b4,#b5,#b6,#b7').stop();
+		$('#b1').attr('id','b11');
+		$('#b2').attr('id','b22')
+		$('#b3').attr('id','b33')
+		$('#b4').attr('id','b44')
+		$('#b5').attr('id','b55')
+		$('#b6').attr('id','b66')
+		$('#b7').attr('id','b77')
+		$('#b11').animate({top:240, left: vw-350},500);
+		$('#b22').animate({top:240, left: vw-250},500);
+		$('#b33').animate({top:240, left: vw-150},500);
+		$('#b44').animate({top:240, left: vw-50},500);
+		$('#b55').animate({top:240, left: vw+50},500);
+		$('#b66').animate({top:240, left: vw+150},500);
+		$('#b77').animate({top:240, left: vw+250},500);
+		$('.balloons').css('opacity','0.9');
+		$('.balloons h2').fadeIn(3000);
+		$(this).fadeOut('slow').delay(3000).promise().done(function(){
+			$('#story').fadeIn('slow');
+		});
+	});
+	
+	$('#story').click(function(){
+		$(this).fadeOut('slow');
+		$('.cake').fadeOut('fast').promise().done(function(){
+			$('.message').fadeIn('slow');
+		});
+		
+		var i;
+
+		function msgLoop (i) {
+			// Display all paragraphs at once instead of one by one
+			if (i == 0) {
+				$(".message p").fadeIn('slow').delay(30000).promise().done(function() {
+					$('.cake').fadeIn('fast');
+					$('#memories_button').fadeIn('slow');
+				});
+			}
+		}
+		
+		msgLoop(0);
+		
+	});
+});
+
+// Heart trail effect
+document.addEventListener('mousemove', function(e) {
+    createHeart(e.clientX, e.clientY);
+});
+
+function createHeart(x, y) {
+    if (Math.random() > 0.9) { // Only create hearts occasionally
+        const heart = document.createElement('div');
+        heart.className = 'floating-heart';
+        heart.innerHTML = '❤';
+        heart.style.left = x + 'px';
+        heart.style.top = y + 'px';
+        heart.style.animationDuration = (3 + Math.random() * 3) + 's';
+        document.querySelector('.heart-trail').appendChild(heart);
+        
+        // Remove heart after animation completes
+        setTimeout(() => {
+            heart.remove();
+        }, 6000);
+    }
+}
+
+// Randomly create floating hearts
+setInterval(() => {
+    const x = Math.random() * window.innerWidth;
+    const y = window.innerHeight;
+    createHeart(x, y);
+}, 300);
+
+// Music control
+let isMusicPlaying = false;
+const songAudio = document.querySelector('.song');
+
+function toggleMusic() {
+    const musicIcon = document.getElementById('music-icon');
+    if (isMusicPlaying) {
+        songAudio.pause();
+        musicIcon.className = 'fas fa-music';
+    } else {
+        songAudio.play();
+        musicIcon.className = 'fas fa-pause';
+    }
+    isMusicPlaying = !isMusicPlaying;
+}
+
+// Play music automatically when page loads
+window.addEventListener('load', function() {
+    // Try to play music (may be blocked by browser)
+    const playPromise = songAudio.play();
+    
+    if (playPromise !== undefined) {
+        playPromise.then(_ => {
+            // Automatic playback started
+            isMusicPlaying = true;
+            document.getElementById('music-icon').className = 'fas fa-pause';
+        }).catch(error => {
+            // Auto-play was prevented
+            isMusicPlaying = false;
+        });
+    }
+});
+</script>
+</div> <!-- End of container -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+<script src="effect.js"></script>
+</body>
+</html>

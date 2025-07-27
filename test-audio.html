@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Test</title>
+</head>
+<body>
+    <h1>Audio Test Page</h1>
+    <p>This page tests if the audio file can be played.</p>
+    
+    <h2>Direct Audio Controls</h2>
+    <audio controls>
+        <source src="music.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    
+    <h2>Audio with JavaScript Control</h2>
+    <button id="playBtn">Play Audio</button>
+    <button id="pauseBtn">Pause Audio</button>
+    
+    <script>
+        // JavaScript audio control
+        const audio = new Audio('music.mp3');
+        document.getElementById('playBtn').addEventListener('click', () => {
+            audio.play().then(() => {
+                console.log('Audio playing successfully');
+            }).catch(err => {
+                console.error('Error playing audio:', err);
+            });
+        });
+        
+        document.getElementById('pauseBtn').addEventListener('click', () => {
+            audio.pause();
+            console.log('Audio paused');
+        });
+    </script>
+</body>
+</html>

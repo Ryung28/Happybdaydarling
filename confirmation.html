@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Date is Set! 💕</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="confirmation-page">
+    <!-- Heart Trail Container -->
+    <div id="heart-trail"></div>
+    
+    <!-- Background Animation -->
+    <div class="floating-hearts">
+        <div class="heart-bg heart-1">💖</div>
+        <div class="heart-bg heart-2">💕</div>
+        <div class="heart-bg heart-3">💗</div>
+        <div class="heart-bg heart-4">💝</div>
+        <div class="heart-bg heart-5">💘</div>
+        <div class="heart-bg heart-6">💞</div>
+    </div>
+
+    <!-- Celebration Animation -->
+    <div class="celebration">
+        <div class="confetti"></div>
+        <div class="balloons">
+            <div class="balloon balloon-1">🎈</div>
+            <div class="balloon balloon-2">🎈</div>
+            <div class="balloon balloon-3">🎈</div>
+            <div class="balloon balloon-4">🎈</div>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <div class="confirmation-card">
+            <!-- Header Section -->
+            <div class="confirmation-header">
+                <div class="success-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <h1 class="page-title">
+                    🎉 Our Date is Confirmed! 🎉
+                </h1>
+                <p class="confirmation-subtitle">
+                    I can't wait to spend this special time with you, my love! 💕
+                </p>
+            </div>
+
+            <!-- Date Card -->
+            <div class="date-card">
+                <div class="card-header">
+                    <h2>Our Perfect Date Details</h2>
+                    <div class="card-decoration">
+                        <i class="fas fa-heart"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-heart"></i>
+                    </div>
+                </div>
+
+                <div class="date-details">
+                    <div class="detail-item">
+                        <div class="detail-icon">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <div class="detail-content">
+                            <h3>Date</h3>
+                            <p id="confirmed-date">Loading...</p>
+                        </div>
+                    </div>
+
+                    <div class="detail-item">
+                        <div class="detail-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="detail-content">
+                            <h3>Time</h3>
+                            <p id="confirmed-time">Loading...</p>
+                        </div>
+                    </div>
+
+                    <div class="detail-item">
+                        <div class="detail-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <div class="detail-content">
+                            <h3>Activity</h3>
+                            <p id="confirmed-activity">Loading...</p>
+                        </div>
+                    </div>
+
+                    <div class="detail-item special-notes" id="notes-section" style="display: none;">
+                        <div class="detail-icon">
+                            <i class="fas fa-magic"></i>
+                        </div>
+                        <div class="detail-content">
+                            <h3>Special Notes</h3>
+                            <p id="confirmed-notes"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Activity Preview -->
+                <div class="activity-preview" id="activity-preview">
+                    <div class="preview-content">
+                        <div class="preview-icon" id="preview-icon">🍕</div>
+                        <div class="preview-text">
+                            <h4 id="preview-title">Cozy Pizza Date</h4>
+                            <p id="preview-description">Share delicious pizza while talking about everything and nothing</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Countdown Timer -->
+            <div class="countdown-section">
+                <h3>Time Until Our Date 💕</h3>
+                <div class="countdown-timer" id="countdown">
+                    <div class="time-unit">
+                        <span class="time-number" id="days">00</span>
+                        <span class="time-label">Days</span>
+                    </div>
+                    <div class="time-unit">
+                        <span class="time-number" id="hours">00</span>
+                        <span class="time-label">Hours</span>
+                    </div>
+                    <div class="time-unit">
+                        <span class="time-number" id="minutes">00</span>
+                        <span class="time-label">Minutes</span>
+                    </div>
+                    <div class="time-unit">
+                        <span class="time-number" id="seconds">00</span>
+                        <span class="time-label">Seconds</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Love Message -->
+            <div class="love-message">
+                <div class="message-content">
+                    <h3>A Special Message for You 💖</h3>
+                    <p>
+                        Thank you for being the most amazing girlfriend in the world. 
+                        Every day with you is a gift, and I'm so excited to celebrate 
+                        your birthday and create more beautiful memories together.
+                    </p>
+                    <p>
+                        You deserve all the happiness in the world, and I promise to 
+                        make our date absolutely perfect for you. I love you more 
+                        than words can express! 💕
+                    </p>
+                    <div class="signature">
+                        <p>Forever yours,</p>
+                        <p class="signature-name">Your loving boyfriend 💖</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+                <button class="action-btn secondary" onclick="location.href='birthday.html'">
+                    <i class="fas fa-gift"></i>
+                    <span>Birthday Surprise</span>
+                </button>
+                <button class="action-btn primary" onclick="location.href='index.html'">
+                    <i class="fas fa-home"></i>
+                    <span>Start Over</span>
+                </button>
+                <button class="action-btn special" onclick="shareDate()">
+                    <i class="fas fa-share-heart"></i>
+                    <span>Share Our Date</span>
+                </button>
+            </div>
+
+            <!-- Calendar Integration -->
+            <div class="calendar-section">
+                <h3>Add to Calendar 📅</h3>
+                <div class="calendar-buttons">
+                    <button class="calendar-btn" onclick="addToGoogleCalendar()">
+                        <i class="fab fa-google"></i>
+                        <span>Google Calendar</span>
+                    </button>
+                    <button class="calendar-btn" onclick="addToOutlook()">
+                        <i class="fab fa-microsoft"></i>
+                        <span>Outlook</span>
+                    </button>
+                    <button class="calendar-btn" onclick="downloadICS()">
+                        <i class="fas fa-download"></i>
+                        <span>Download .ics</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Audio Element -->
+    <audio id="birthday-song" loop preload="auto">
+        <source src="music.mp3" type="audio/mpeg">
+        <source src="music-copy.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- Music Control -->
+    <div class="music-control">
+        <button id="music-toggle" class="music-btn">
+            <i class="fas fa-music"></i>
+        </button>
+    </div>
+
+    <!-- Share Modal -->
+    <div class="modal" id="share-modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeShareModal()">&times;</span>
+            <h3>Share Our Special Date 💕</h3>
+            <div class="share-options">
+                <button class="share-btn" onclick="shareToWhatsApp()">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>WhatsApp</span>
+                </button>
+                <button class="share-btn" onclick="shareToFacebook()">
+                    <i class="fab fa-facebook"></i>
+                    <span>Facebook</span>
+                </button>
+                <button class="share-btn" onclick="shareToTwitter()">
+                    <i class="fab fa-twitter"></i>
+                    <span>Twitter</span>
+                </button>
+                <button class="share-btn" onclick="copyLink()">
+                    <i class="fas fa-link"></i>
+                    <span>Copy Link</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Message -->
+    <div class="floating-message" id="floating-message">
+        <i class="fas fa-heart"></i> Our special date is set! <i class="fas fa-heart"></i>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

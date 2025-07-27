@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Darling ❤️</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Poppins:wght@300;400;500;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+<body>
+    <!-- Heart Trail Container -->
+    <div id="heart-trail"></div>
+    
+    <!-- Floating Hearts Background -->
+    <div class="floating-hearts">
+        <div class="heart-bg heart-1">❤️</div>
+        <div class="heart-bg heart-2">💖</div>
+        <div class="heart-bg heart-3">💕</div>
+        <div class="heart-bg heart-4">💓</div>
+        <div class="heart-bg heart-5">💗</div>
+        <div class="heart-bg heart-6">💘</div>
+        <div class="heart-bg heart-7">💞</div>
+        <div class="heart-bg heart-8">💝</div>
+    </div>
+    
+    <!-- Animated Particles -->
+    <div id="particles-js"></div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <div class="birthday-card" data-aos="fade-up" data-aos-duration="1000">
+            <!-- Sparkle Effects -->
+            <div class="sparkles">
+                <div class="sparkle sparkle-1">✨</div>
+                <div class="sparkle sparkle-2">✨</div>
+                <div class="sparkle sparkle-3">✨</div>
+                <div class="sparkle sparkle-4">✨</div>
+                <div class="sparkle sparkle-5">✨</div>
+                <div class="sparkle sparkle-6">✨</div>
+                <div class="sparkle sparkle-7">✨</div>
+            </div>
+
+            <!-- Main Content -->
+            <div class="card-content">
+                <div class="title-section" data-aos="zoom-in" data-aos-delay="300">
+                <h1 class="main-title">
+                    <span class="word word-1">Happy</span>
+                    <span class="word word-2">Birthday</span>
+                    <span class="word word-3">My</span>
+                    <span class="word word-4">Darling</span>
+                    <span class="word word-5">❤️</span>
+                </h1>
+                <div class="subtitle">Today is all about celebrating you!</div>
+            </div>
+
+                <!-- Profile Image Section -->
+                <div class="profile-section" data-aos="fade-up" data-aos-delay="500">
+                    <div class="profile-image-container">
+                        <div class="image-frame">
+                            <img src="placeholder-photo.jpg" alt="My Beautiful Girlfriend" class="profile-image">
+                            <div class="image-overlay">
+                                <div class="heart-burst">
+                                    <i class="fas fa-heart heart-burst-1"></i>
+                                    <i class="fas fa-heart heart-burst-2"></i>
+                                    <i class="fas fa-heart heart-burst-3"></i>
+                                    <i class="fas fa-heart heart-burst-4"></i>
+                                    <i class="fas fa-heart heart-burst-5"></i>
+                                    <i class="fas fa-heart heart-burst-6"></i>
+                                    <i class="fas fa-heart heart-burst-7"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="image-caption">The most beautiful smile in my world</div>
+                    </div>
+                </div>
+
+                <!-- Interactive Elements -->
+                <div class="interactive-section" data-aos="fade-up" data-aos-delay="700">
+                    <div class="love-meter-container">
+                        <h3 class="section-title">❤️ Our Love Story ❤️</h3>
+                        <div class="love-meter">
+                            <div class="meter-bar">
+                                <div class="meter-fill"><span class="meter-value">100%</span></div>
+                                <div class="meter-icons"></div>
+                            </div>
+                            <div class="meter-labels">
+                                <span>Like</span>
+                                <span>Love</span>
+                                <span>Adore</span>
+                                <span>Forever</span>
+                                <span>Infinity</span>
+                            </div>
+                        </div>
+                        <div class="meter-message">Every moment with you makes my heart overflow with love ❤️</div>
+                    </div>
+                </div>
+
+                <!-- Continue Button -->
+                <div class="button-container" data-aos="zoom-in" data-aos-delay="900">
+                    <button class="continue-btn" onclick="location.href='memories.html'">
+                        <span class="btn-text">Explore Our Memories</span>
+                        <i class="fas fa-photo-film"></i>
+                        <div class="btn-hearts">
+                            <i class="fas fa-heart"></i>
+                            <i class="fas fa-heart"></i>
+                            <i class="fas fa-heart"></i>
+                            <i class="fas fa-heart"></i>
+                            <i class="fas fa-heart"></i>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Audio Element -->
+    <audio id="birthday-song" loop preload="auto">
+        <source src="music.mp3" type="audio/mpeg">
+        <source src="happy-birthday-master/happy-birthday-master/music.mp3" type="audio/mpeg">
+        <source src="Happy Birthday_files/music.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- Music Control -->
+    <div class="music-control">
+        <button id="music-toggle" class="music-btn">
+            <i class="fas fa-music"></i>
+            <span class="music-tooltip">Play Music</span>
+        </button>
+    </div>
+
+    <!-- Floating Message -->
+    <div class="floating-message" id="floating-message">
+        <i class="fas fa-heart"></i> Tap anywhere for magic! <i class="fas fa-heart"></i>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
