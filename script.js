@@ -355,29 +355,9 @@ function initializeAnimations() {
         word.style.animationDelay = (index * 0.2) + 's';
     });
     
-    // Animate cards on scroll
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-    
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-            }
-        });
-    }, observerOptions);
-    
-    // Observe animated elements
-    const animatedElements = document.querySelectorAll('.birthday-card, .memories-card, .date-planner-card, .confirmation-card, .photo-item, .stat-item');
-    animatedElements.forEach(element => {
-        element.style.opacity = '0';
-        element.style.transform = 'translateY(30px)';
-        element.style.transition = 'all 0.6s ease-out';
-        observer.observe(element);
-    });
+    // Animate cards using AOS (handled by data-aos attributes in HTML)
+    // No custom IntersectionObserver needed here for initial visibility
+
 }
 
 // ===== PAGE-SPECIFIC FEATURES =====

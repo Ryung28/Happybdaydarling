@@ -44,7 +44,7 @@
 
             <!-- Main Content -->
             <div class="card-content">
-                <div class="title-section" data-aos="zoom-in" data-aos-delay="300">
+                <div class="title-section">
                 <h1 class="main-title">
                     <span class="word word-1">Happy</span>
                     <span class="word word-2">Birthday</span>
@@ -59,7 +59,7 @@
                 <div class="profile-section" data-aos="fade-up" data-aos-delay="500">
                     <div class="profile-image-container">
                         <div class="image-frame">
-                            <img src="placeholder-photo.jpg" alt="My Beautiful Girlfriend" class="profile-image">
+                            <img src="placeholder-photo1.jpg" alt="My Beautiful Girlfriend" class="profile-image">
                             <div class="image-overlay">
                                 <div class="heart-burst">
                                     <i class="fas fa-heart heart-burst-1"></i>
@@ -162,15 +162,10 @@
         
         function initializeTitleAnimation() {
             const titleWords = document.querySelectorAll('.word');
+            // Ensure words are visible and animated by CSS
             titleWords.forEach((word, index) => {
-                word.style.opacity = '0';
-                word.style.transform = 'translateY(20px)';
-                word.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-                
-                setTimeout(() => {
-                    word.style.opacity = '1';
-                    word.style.transform = 'translateY(0)';
-                }, index * 200 + 500); // Staggered animation
+                // No explicit opacity or transform manipulation here, let CSS handle it
+                // The wordBounce animation in styles.css will handle the visual effect
             });
         }
         

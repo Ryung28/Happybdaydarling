@@ -267,14 +267,8 @@ body::before {
     text-align: center;
     margin-bottom: 25px;
     /* Fallback color for browsers that don't support gradient text */
-    color: #ff1493;
-    background: linear-gradient(45deg, #ff69b4, #ff1493, #dc143c, #ff69b4);
-    background-size: 300% 300%;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: #000000; /* Set to black for visibility test */
     line-height: 1.2;
-    animation: gradientFlow 8s ease infinite;
     filter: drop-shadow(0 2px 4px rgba(255, 20, 147, 0.3));
     width: 100%;
     overflow-wrap: break-word;
@@ -290,11 +284,7 @@ body::before {
     }
 }
 
-@keyframes gradientFlow {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
+
 
 .subtitle {
     text-align: center;
@@ -307,11 +297,10 @@ body::before {
 
 .word {
     display: inline-block;
-    animation: wordBounce 3s ease-in-out infinite;
+
     transform-origin: bottom center;
     max-width: 100%;
-    opacity: 1; /* Will be overridden by JavaScript for controlled animation */
-    transform: translateY(0); /* Will be overridden by JavaScript for controlled animation */
+
 }
 
 .word-1 { animation-delay: 0s; }
