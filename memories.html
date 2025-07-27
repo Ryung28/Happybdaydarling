@@ -5,9 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Memories ❤️</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Poppins:wght@300;400;500;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Poppins:wght@300;400;500;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.media='all'">
+    <style>
+        /* Critical CSS for immediate loading */
+        .memories-page { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        .memories-card { background: rgba(255, 255, 255, 0.95); border-radius: 20px; padding: 40px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+        .page-title { text-align: center; font-size: 3rem; color: #ff6b6b; margin-bottom: 30px; }
+        .message-text { font-size: 1.1rem; line-height: 1.8; margin-bottom: 20px; color: #333; }
+        .loading-spinner { display: none; }
+    </style>
 </head>
 <body class="memories-page">
     <!-- Heart Trail Container -->
@@ -25,14 +33,25 @@
         <div class="heart-bg heart-8">💓</div>
     </div>
     
-    <!-- Animated Particles -->
-    <div id="particles-js"></div>
+    <!-- Loading Indicator -->
+    <div id="loading-indicator" style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; font-size: 1.2rem; z-index: 1000;">
+        <div style="text-align: center;">
+            <div style="border: 3px solid rgba(255,255,255,0.3); border-top: 3px solid #ff6b6b; border-radius: 50%; width: 40px; height: 40px; animation: spin 1s linear infinite; margin: 0 auto 10px;"></div>
+            Loading your memories...
+        </div>
+    </div>
+    <style>
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
 
     <!-- Main Container -->
     <div class="container">
-        <div class="memories-card" data-aos="fade-up" data-aos-duration="1000">
+        <div class="memories-card">
             <!-- Header Section -->
-            <div class="memories-header" data-aos="fade-down" data-aos-delay="300">
+            <div class="memories-header">
                 <h1 class="page-title">
                     <i class="fas fa-heart"></i>
                     Hello Darling
@@ -47,7 +66,7 @@
             </div>
 
             <!-- Romantic Message Section -->
-            <div class="romantic-message" data-aos="fade-up" data-aos-delay="500">
+            <div class="romantic-message">
                 <div class="message-container">
                     <h2 class="message-title">Hello darling, surprise hahahahahaha! 🎉</h2>
                     <div class="profile-image-container" style="text-align: center; margin: 20px auto;">
@@ -124,7 +143,7 @@
             </div>
 
             <!-- Photo Gallery Section -->
-            <div class="photo-gallery" data-aos="fade-up" data-aos-delay="700">
+            <div class="photo-gallery">
                 <h2 class="gallery-title">
                     <i class="fas fa-camera-retro"></i>
                     Our Precious Memories
@@ -202,7 +221,7 @@
             </div>
 
             <!-- Love Stats Section -->
-            <div class="love-stats" data-aos="fade-up" data-aos-delay="900">
+            <div class="love-stats">
                 <h3>Our Love in Numbers 📊</h3>
                 <div class="stats-container">
                     <div class="stat-item">
@@ -225,7 +244,7 @@
             </div>
 
             <!-- Return Button -->
-            <div class="button-container" data-aos="zoom-in">
+            <div class="button-container">
                 <button class="continue-btn" onclick="location.href='index.html'">
                     <span class="btn-text">Back to Birthday Card</span>
                     <i class="fas fa-birthday-cake"></i>
@@ -239,7 +258,7 @@
             </div>
 
             <!-- Continue to Birthday Surprise Button -->
-            <div class="button-container" data-aos="zoom-in" data-aos-delay="200">
+            <div class="button-container">
                 <button class="continue-btn" id="birthdaySurpriseBtn">
                     <span class="btn-text">Birthday Surprise</span>
                     <i class="fas fa-gift"></i>
@@ -275,9 +294,36 @@
     </audio>
 
     <!-- Scripts -->
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script src="script.js"></script>
+    <script src="script.js" async></script>
+    <script>
+        // Simple fade-in animation for immediate loading
+        document.addEventListener('DOMContentLoaded', function() {
+            const loadingIndicator = document.getElementById('loading-indicator');
+            const elements = document.querySelectorAll('.memories-card, .memories-header, .romantic-message, .photo-gallery, .love-stats, .button-container');
+            
+            // Hide loading indicator after a short delay
+            setTimeout(() => {
+                if (loadingIndicator) {
+                    loadingIndicator.style.opacity = '0';
+                    loadingIndicator.style.transition = 'opacity 0.5s ease';
+                    setTimeout(() => {
+                        loadingIndicator.style.display = 'none';
+                    }, 500);
+                }
+            }, 800);
+            
+            // Animate elements
+            elements.forEach((el, index) => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                setTimeout(() => {
+                    el.style.opacity = '1';
+                    el.style.transform = 'translateY(0)';
+                }, (index * 100) + 500); // Start after loading indicator begins to fade
+            });
+        });
+    </script>
     
     <!-- Birthday Surprise Button Script -->
     <script>

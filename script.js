@@ -8,28 +8,7 @@ let heartTrailActive = true;
 
 // ===== INITIALIZATION =====
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize AOS animations
-    AOS.init({
-        duration: 1000,
-        easing: 'ease-in-out',
-        once: false,
-        mirror: true
-    });
-    
-    // Initialize particles.js
-    if (document.getElementById('particles-js')) {
-        particlesJS('particles-js', {
-            particles: {
-                number: { value: 30, density: { enable: true, value_area: 800 } },
-                color: { value: '#ff69b4' },
-                shape: { type: 'circle' },
-                opacity: { value: 0.5, random: true },
-                size: { value: 5, random: true },
-                line_linked: { enable: false },
-                move: { enable: true, speed: 2, direction: 'none', random: true, out_mode: 'out' }
-            }
-        });
-    }
+    // Initialize core features without external dependencies
     
     initializeHeartTrail();
     initializeCustomCursor();
@@ -38,6 +17,9 @@ document.addEventListener('DOMContentLoaded', function() {
     initializePageSpecificFeatures();
     createFloatingHearts();
     createSparkles();
+    
+    // Initialize background music
+    initBackgroundMusic();
     
     // Show floating message
     setTimeout(() => {
